@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="go_to_first">Ir al Primero</string>
+    <string name="go_to_second">Ir al Segundo</string>
+    <string name="go_to_third">Ir al Tercero</string>
+    <string name="go_to_list">Ir al Lista</string>
+</resources>
