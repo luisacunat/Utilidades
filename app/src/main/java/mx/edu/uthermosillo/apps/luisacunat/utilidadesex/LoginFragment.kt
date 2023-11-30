@@ -32,13 +32,15 @@ class LoginFragment : Fragment() {
                 val email = user.text.toString()
                 val pass = password.text.toString()
 
-                if(checkUsername(email, users) &&
-                    checkPassword(pass, users)){
-                    Toast.makeText(context,"Login Correcto",Toast.LENGTH_SHORT).show()
+                if(checkUser(email, pass, users)){
+                    Toast.makeText(context,"Login Correcto",Toast.LENGTH_SHORT)
+                        .show()
 
                     //TODO Cambiar a MainActivity
                     val i = Intent(view.context, MainActivity::class.java)
                     startActivity(i)
+                    activity?.finish()
+
                 } else {
                     Toast.makeText(context,
                         "Las credenciales no coinciden",
@@ -56,19 +58,14 @@ class LoginFragment : Fragment() {
         return view
     }
 
-    private fun checkUsername(text: String, users: List<User>): Boolean {
+    private fun checkUser(username: String, password: String,
+                          users: List<User>): Boolean {
         return users.any { user ->
-            text == user.email
+            username == user.email && password == user.password
         }
     }
 
-    private fun checkPassword(text: String, users: List<User>): Boolean {
-        return users.any { user ->
-            text == user.password
-        }
-    }
-
-    fun validUsers() {
+    private fun validUsers() {
         users = listOf(
             User(1, "luis@mail.com", "12345678"),
             User(2, "tony@avengers.com", "Stark"),
@@ -76,7 +73,4 @@ class LoginFragment : Fragment() {
             User(4, "johndoe@mail.com", "woeisme")
         )
     }
-
-
-
 }
