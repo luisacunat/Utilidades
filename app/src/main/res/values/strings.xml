@@ -3,6 +3,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="login">Login</string>
+
     <string name="go_to_first">Go to First</string>
     <string name="go_to_second">Go to Second</string>
     <string name="go_to_third">Go to Third</string>

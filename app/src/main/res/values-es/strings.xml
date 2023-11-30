@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="username_label">Usuario</string>
+    <string name="password_label">Constraseña</string>
+    <string name="login">Iniciar Sesión</string>
+
     <string name="go_to_first">Ir al Primero</string>
     <string name="go_to_second">Ir al Segundo</string>
     <string name="go_to_third">Ir al Tercero</string>

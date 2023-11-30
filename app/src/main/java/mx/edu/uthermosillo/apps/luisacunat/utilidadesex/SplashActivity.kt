@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
                 "¡Aplastado!",
                 Toast.LENGTH_SHORT).show()
 
-            val i = Intent(this, MainActivity::class.java)
+            val i = Intent(this, AuthActivity::class.java)
             startActivity(i)
         }
     }
