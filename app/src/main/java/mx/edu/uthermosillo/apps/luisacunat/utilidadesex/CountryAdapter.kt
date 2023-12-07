@@ -1,7 +1,5 @@
 package mx.edu.uthermosillo.apps.luisacunat.utilidadesex
 
-import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class CountryAdapter(private var countries: List<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
+class CountryAdapter(private var countries: MutableList<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
 
         val inflador = LayoutInflater.from(parent.context)
@@ -28,6 +26,11 @@ class CountryAdapter(private var countries: List<Country>): RecyclerView.Adapter
 
     override fun getItemCount(): Int {
         return countries.size
+    }
+
+    fun addNewItem(item: Country) {
+        countries.add(item)
+        notifyItemInserted(countries.size - 1)
     }
 
     class CountryViewHolder(view: View): RecyclerView.ViewHolder(view) {
